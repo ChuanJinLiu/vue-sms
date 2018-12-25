@@ -226,9 +226,8 @@
         this.listLoading = true;
         //NProgress.start();
         getUserList(para).then((res) => {
-          // this.total = res.data.total;
-          console.log(this.listLoading);
-          this.users = res.data;
+          this.total = res.data.total;
+          this.users = res.data.users;
           this.listLoading = false;
           //NProgress.done();
         });
@@ -333,6 +332,7 @@
           this.listLoading = true;
           //NProgress.start();
           let para = {ids: ids};
+          console.log(para);
           batchremoveUser(para).then((res) => {
             this.listLoading = false;
             //NProgress.done();
