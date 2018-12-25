@@ -11,11 +11,11 @@ export const requestLogin = params => {
 };
 
 export const getUserList = params => {
-  return axios.get(`${base}/user/userList`, {params: params});
+  return axios.get(`${base}/user/list`, {params: params});
 };
 
 export const removeUser = params => {
-  return axios.get(`${base}/user/remove`, {params: params});
+  return axios.get(`${base}/user/delete`, {params: params});
 };
 
 export const batchremoveUser = params => {
