@@ -10,8 +10,28 @@ export const requestLogin = params => {
   return axios.get(`${base}/user/login`, {params: params}).then(res => res.data);
 };
 
+export const getUserList = params => {
+  return axios.get(`${base}/user/userList`, {params: params});
+};
+
+export const removeUser = params => {
+  return axios.get(`${base}/user/remove`, {params: params});
+};
+
+export const batchremoveUser = params => {
+  return axios.get(`${base}/user/batchremove`, {params: params});
+};
+
+export const editUser = params => {
+  return axios.get(`${base}/user/edit`, {params: params});
+};
+
+export const addUser = params => {
+  return axios.get(`${base}/user/add`, {params: params});
+};
+
 export const getPersonList = params => {
-  return axios.get(`${base}/user/list`, {params: params});
+  return axios.get(`${base}/person/list`, {params: params});
 };
 
 export const getPersonListPage = params => {

@@ -8,16 +8,7 @@ import User from '../views/nav1/userList.vue'
 import Form from '../views/nav1/Form.vue'
 import Page4 from '../views/nav2/Page4.vue'
 import Page5 from '../views/nav2/Page5.vue'
-import Page6 from '../views/nav3/Page6.vue'
 import echarts from '../views/charts/echarts.vue'
-
-let user = sessionStorage.getItem('user');
-
-if (user) {
-  user = JSON.parse(user);
-  var roleList = role(user.name);
-}
-
 
 let routes = [
   {
@@ -32,42 +23,32 @@ let routes = [
     name: '',
     hidden: true
   },
-  //{ path: '/main', component: Main },
   {
     path: '/',
     component: Home,
-    name: '基础管理',
+    name: '基础信息管理',
     iconCls: 'el-icon-message',//图标样式class
     children: [
       {path: '/main', component: Main, name: '主页', hidden: true},
       {path: '/user', component: User, name: '用户管理'},
-      {path: '/person', component: Form, name: '人员管理'},
+      {path: '/bill', component: Form, name: '账单管理'},
+      {path: '/supplier', component: Form, name: '供应商管理'},
     ]
   },
   {
     path: '/',
     component: Home,
-    name: '导航二',
+    name: '系统管理',
     iconCls: 'fa fa-id-card-o',
     children: [
-      {path: '/page4', component: Page4, name: '页面4'},
-      {path: '/page5', component: Page5, name: '页面5'}
+      {path: '/role', component: Page4, name: '权限管理'},
+      {path: '/res', component: Page5, name: '菜单管理'}
     ]
   },
   {
     path: '/',
     component: Home,
-    name: '',
-    iconCls: 'fa fa-address-card',
-    leaf: true,//只有一个节点
-    children: [
-      {path: '/page6', component: Page6, name: '导航三'}
-    ]
-  },
-  {
-    path: '/',
-    component: Home,
-    name: 'Charts',
+    name: '工具',
     iconCls: 'fa fa-bar-chart',
     children: [
       {path: '/echarts', component: echarts, name: 'echarts'}
